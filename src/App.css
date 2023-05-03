@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
 }
 html, body {
     color: white;
@@ -19,22 +21,28 @@ h1{
 .App{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
 }
-/*Lista de Productos*/
-.productos-contenedor{
-    width: 600px;
+.NavBar li{
+    display: inline;
+    justify-content: space-between;
+    padding: 0 15px;
+    align-items: center;
+}
+.cuerpo-contenedor{
+    width: 30%;
     min-height: 500px;
     background-color: #d0d0d5;
     padding: 25px;
     margin: 10px;
     border-radius: 26px;
 }
-.productos-propiedades ul li{
+.cuerpo-propiedades ul li{
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
    align-items: center;
    font-size: 200px;
+   
 }

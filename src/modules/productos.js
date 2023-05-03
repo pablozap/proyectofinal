@@ -1,5 +1,6 @@
 import React  from "react";
 import { useState } from "react";
+import './Productos.css';
 export const Productos = () => {
     const [nombre, setNombre] = useState("");
     const [precio, setPrecio] = useState(0);
@@ -11,9 +12,12 @@ export const Productos = () => {
         };
         setProductos([...productos, objeto]);
         console.log(productos);
+        actuales = productos;
+        console.log(actuales);
     }
     return (     
-        <div>
+        <div className="productos-contenedor">
+            <h1>Mis Productos</h1>
             <ul>
                 <li>
                 <label htmlFor="nombre">Nombre del Producto</label>
@@ -32,3 +36,4 @@ export const Productos = () => {
         </div>
     )
 }
+export let actuales;
