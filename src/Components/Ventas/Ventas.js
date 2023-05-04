@@ -1,6 +1,6 @@
 import './Ventas.css';
 import { useState } from "react";
-import {actuales} from './Productos';
+import {actuales} from '../Productos/Productos';
 import Select from "react-select";
 export let actualGanancia = 0;
 export const Ventas = () => {

@@ -1,8 +1,8 @@
 import './App.css';
-import { Productos, actuales } from './modules/Productos';
-import { Ventas } from './modules/Ventas';
+import { Productos} from './Components/Productos/Productos';
+import { Ventas } from './Components/Ventas/Ventas';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import { NavBar } from "./Components/NavBar";
+import { NavBar } from "./Components/NavBar/NavBar";
 function App() {
   return (
     <div className="App">
