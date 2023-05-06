@@ -1,8 +1,10 @@
 import './App.css';
+import { NavBar } from "./Components/NavBar/NavBar";
 import { Productos} from './Components/Productos/Productos';
 import { Ventas } from './Components/Ventas/Ventas';
+import { Ganancias } from './Components/Ganancias/Ganancias';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import { NavBar } from "./Components/NavBar/NavBar";
+
 function App() {
   return (
     <div className="App">
@@ -12,6 +14,7 @@ function App() {
           <Routes>
             <Route path='/Productos' element={<Productos/>} />
             <Route path='/Ventas' element={<Ventas/>} />
+            <Route path='/Ganancias' element={<Ganancias/>} />
           </Routes>
         </Router>
       </div>      
