@@ -14,14 +14,21 @@ export const Ventas = () => {
         setSeleccionado(value);
     };
 
-    const Venta = () => {
+    const Venta = (operacion) => {
         let ubicacion = posicion();
         console.log("Posicion del elemento en el arreglo: "+ubicacion);
         console.log("Precio del elemento en el arreglo: "+actuales[ubicacion].precio);
-        setActualGanancia(actualGanancia + (actuales[ubicacion].precio * cantidad));
-        actuales[ubicacion].cantidad -= cantidad;
-        console.log("La actual cantidad es :" + actuales[ubicacion].cantidad);
-
+        if ((actuales[ubicacion].cantidad - cantidad) >= 0) {
+            if (operacion == "ganancia") {
+                setActualGanancia(actualGanancia + (actuales[ubicacion].precio * cantidad));
+            } else {
+                setActualGanancia(actualGanancia - (actuales[ubicacion].precio * cantidad));
+            }
+            actuales[ubicacion].cantidad -= cantidad;
+            console.log("La actual cantidad es :" + actuales[ubicacion].cantidad);
+        } else {
+            alert('No hay' +actuales[ubicacion].nombre + 'suficiente en el inventario');
+        }
     }
 
     const posicion = () => {
@@ -45,8 +52,11 @@ export const Ventas = () => {
                 onChange={handleSeleccionado}
             />
             <input type="number" placeholder="Cantidad" onChange={(e) => setCantidad(e.target.value)} />
-            <button onClick={(e) => Venta()}>Guardar</button>
-            <button onClick={(e) => ver()}>Ver</button>
+            <div className='ventas-botones-contenedor'>
+                <button onClick={() => Venta("ganancia")} id='ganancia-boton'>Venta</button>
+                <button onClick={() => Venta()} id='perdida-boton'>Perdida</button>
+            </div>
+            <button onClick={() => ver()}>Ver</button>
         </div>
     )
 }

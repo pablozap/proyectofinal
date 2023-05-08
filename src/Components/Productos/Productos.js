@@ -14,18 +14,22 @@ export const Productos = () => {
             <ul>
                 <li>
                 <label htmlFor="nombre">Nombre del Producto</label>
-                <input type="text" onChange={(e) => setNombre(e.target.value) } id="nombre"/>
+                <input type="text" onChange={(e) => setNombre(e.target.value) } id="nombre" required/>
                 </li>
                 <li>
                 <label htmlFor="precio">Precio</label>
-                <input type="number" onChange={(e) => setPrecio(e.target.value)} id="precio"/>
+                <input type="number" onChange={(e) => setPrecio(e.target.value)} id="precio" required/>
                 </li>
                 <li>
                 <label htmlFor="cantidad">Cantidad</label>
-                <input type="number" onChange={(e) => (setCantidad(e.target.value))} id="cantidad"/>
+                <input type="number" onChange={(e) => (setCantidad(e.target.value))} id="cantidad" required/>
                 </li>
             </ul>
-            <button onClick={() => setProductos([...productos, {nombre, precio, cantidad}])} >Guardar</button>
+            <button onClick={() => {if (cantidad>0 && precio>0 && nombre!="") {
+                setProductos([...productos, {nombre, precio, cantidad}])
+            } else {
+                alert("Ingrese un cantidad valida");
+            } } }>Guardar</button>
             <button onClick={() => console.log(actuales)}>Ver productos</button>
             
         </div>
