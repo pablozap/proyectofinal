@@ -1,7 +1,7 @@
 import React  from "react";
 import { useState } from "react";
 import './Productos.css';
-export let actuales = null;
+export let actuales = [];
 export const Productos = () => {
     const [nombre, setNombre] = useState("");
     const [precio, setPrecio] = useState(0);
